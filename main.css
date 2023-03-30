@@ -20,4 +20,9 @@ footer {
     font-style: italic;
     text-align: right;
 }
+a {
+    href="lab1.html"; target="_blank"; style="text-decoration: none; color: green;";
+    href="lab2.html"; target="_blank"; style="text-decoration: none; color: green;";
+} 
+
 
