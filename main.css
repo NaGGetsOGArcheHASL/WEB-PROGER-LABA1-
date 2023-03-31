@@ -23,6 +23,7 @@ footer {
 a {
     href="lab1.html"; target="_blank"; style="text-decoration: none; color: green;";
     href="lab2.html"; target="_blank"; style="text-decoration: none; color: green;";
+    href="lab3.html"; target="_blank"; style="text-decoration: none; color: green;";
 } 
 
 a:visited {
