@@ -25,4 +25,19 @@ a {
     href="lab2.html"; target="_blank"; style="text-decoration: none; color: green;";
 } 
 
+a:visited {
+color: black;
+background-color: yellow;
+}
 
+a:hover {
+color: red;
+text-decoration: underline;
+background-color: white;
+font-weight: bold;
+}
+
+a:active {
+color: pink;
+background-color: green;
+}    
