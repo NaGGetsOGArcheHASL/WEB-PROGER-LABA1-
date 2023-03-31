@@ -12,6 +12,20 @@ header {
     font-size: 16pt;
 }
 
+header:hover {
+    background-image: linear-gradient(to right bottom, blue, orange, brown, white);
+    color: aqua;
+    padding: 15px;
+    font-size: 10pt;
+    transition: all 2s;
+}
+header:active {
+    background-image: linear-gradient(to right bottom, red, orange, yellow, green, blue);
+    color: lightcoral;
+    padding: 5px;
+    font-size: 20pt;
+    transition: all 2s;
+}
 footer {
     background-color: black;
     color: yellow;
@@ -19,6 +33,20 @@ footer {
     font-size: 16pt;
     font-style: italic;
     text-align: right;
+}
+footer:hover {
+    background-image: linear-gradient(to right bottom, red, orange, yellow, green, blue);
+    color: lightcoral;
+    padding: 5px;
+    font-size: 20pt;
+    transition: all 2s;
+}
+footer:active {
+    background-image: linear-gradient(to right bottom, blue, orange, brown, white);
+    color: aqua;
+    padding: 15px;
+    font-size: 10pt;
+    transition: all 2s;
 }
 a {
     color: blue;
