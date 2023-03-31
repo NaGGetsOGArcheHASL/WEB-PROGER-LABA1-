@@ -40,6 +40,23 @@
             margin-left: 2cm;
             text-indent: 0;
         }
+        .shadow {
+            text-shadow: 10px 8px 6px red;
+        }
+        .shadow-blue {
+            text-shadow: -5px 5px 3px blue;
+        }
+        .shadow-2 {
+            text-shadow: 0 0 3px blue;
+            text-shadow: -5px 5px 3px blue;
+        }
+        .shadow-3 {
+            transition: 400ms 1s;
+            text-shadow: 0 0 0 blue;  
+        }
+        .shadow-3:hover {
+            text-shadow: 0 0 3px blue;
+        }
     </style>
 </head>
 <body>
@@ -48,7 +65,7 @@
     </header>
 
     <main>
-       <h1>Расчет (формула)</h1>
+       <h1 class="shadow-3">Расчет (формула)</h1>
         <div>
             Расчет сводится к определению разницы между активами и пассивами
         (обязательствами), которые определяются следующим образом.
@@ -93,6 +110,10 @@
         <div class="formula">
             Чистые активы = стр.1300 - ЗУ + ДБП
         </div>
+
+        <div class="shadow">Тень</div>
+        <div class="shadow-blue">Синяя тень</div>
+        <div class="shadow-2">Синие размытие</div>
     </main>
     
     <footer>
