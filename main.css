@@ -33,6 +33,7 @@ footer {
     font-size: 16pt;
     font-style: italic;
     text-align: right;
+    width: 100%;
 }
 footer:hover {
     background-image: linear-gradient(to right bottom, red, orange, yellow, green, blue);
