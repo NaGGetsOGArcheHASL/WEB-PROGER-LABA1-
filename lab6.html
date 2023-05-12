@@ -17,8 +17,8 @@
         }
         .rules2 {
             display: auto;
-            background-color: lightgray;
-            color: lightcoral;
+            background-color: orange;
+            color: black;
             width: 400px;
             border: 1px solid red;
             border-radius: 15px;
@@ -26,6 +26,15 @@
         }
         .rules-button-close {
             display: none;
+        }
+        .color {
+            background-color: yellow;
+            width: 200px;
+            height: auto;
+            color: black;
+            border: 3px solid blue;
+            margin-top: 20px;
+            padding: 5px;
         }
     </style>
 
@@ -77,6 +86,33 @@
             document.getElementsByClassName('rules-button-open')[0].style.display = "block";
             document.getElementsByClassName('rules-button-close')[0].style.display = "none";
         }
+        function changeColor(div) {
+            if (div.style.backgroundColor == 'yellow') {
+            div.style.backgroundColor = 'red';
+            div.style.color = 'white';
+            document.getElementById('color-name').innerHTML = 'красный';
+            }
+            else if (div.style.backgroundColor == 'red') {
+                div.style.backgroundColor = 'black';
+                div.style.color = 'yellow';
+                document.getElementById('color-name').innerHTML = 'черный';
+            }
+            else if (div.style.backgroundColor == 'black') {
+                div.style.backgroundColor = 'green';
+                div.style.color = 'orange';
+                document.getElementById('color-name').innerHTML = 'зеленый';
+            }
+            else if (div.style.backgroundColor == 'green') {
+                div.style.backgroundColor = 'blue';
+                div.style.color = 'red';
+                document.getElementById('color-name').innerHTML = 'синий';
+            }
+            else {
+                div.style.backgroundColor = 'yellow';
+                div.style.color = 'blue';
+                document.getElementById('color-name').innerHTML = 'желтый';
+            }
+        }
     </script>
 
 </head>
@@ -127,6 +163,11 @@
                     <li>После того как вы угадали число посмотрите количество попыток и нажмите на кнопку "Сыграть еще раз"</li>
                 </ol>
             </div>
+        </div>
+
+        <div class="color" ondblclick="changeColor(this)">
+            Цвет: <span id="color-name">желтый</span><br>
+            Сделайте двойной щелчок, чтобы сменить.
         </div>
     </main>
 
