@@ -51,6 +51,15 @@
             border: 2px solid red;
             border-radius: 10%;
         }
+        #block2 {
+            width: 100px;
+            cursor: pointer;
+            background-color: blue;
+            margin-top: 200px;
+            text-align: center;
+            border: 3px solid black;
+            border-radius: 10px;
+        }
     </style>
 
     <script>
@@ -139,6 +148,17 @@
             block.style.transform = "rotate(0)";
             }
         }
+        function Width() {
+            const block = document.getElementById("block2");
+            const currentWidth = parseInt(block.style.width);
+            const newWidth = currentWidth + 50;
+            if (newWidth <= 1000) {
+            block.style.width = newWidth + "px";
+            } 
+            else {
+            block.style.width = "100px";
+            }
+        }
     </script>
 
 </head>
@@ -197,6 +217,9 @@
         </div>
         
         <div id="moving-block" onclick="moveBlock()">Щелкни меня</div>
+
+        <div id="block2" onclick="Width()">Расширить</div>
+
     </main>
 
     <footer>
