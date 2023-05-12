@@ -15,6 +15,18 @@
             padding: 20px;
             text-align: center;
         }
+        .rules2 {
+            display: auto;
+            background-color: lightgray;
+            color: lightcoral;
+            width: 400px;
+            border: 1px solid red;
+            border-radius: 15px;
+            line-height: 20px;
+        }
+        .rules-button-close {
+            display: none;
+        }
     </style>
 
     <script>
@@ -55,6 +67,16 @@
             document.getElementById ('result').innerHTML = '';
             }
         }
+        function showRules() {
+            document.getElementsByClassName('rules')[0].style.display = "block";
+            document.getElementsByClassName('rules-button-open')[0].style.display = "none";
+            document.getElementsByClassName('rules-button-close')[0].style.display = "block";
+        }
+        function closeRules() {
+            document.getElementsByClassName('rules')[0].style.display = "none";
+            document.getElementsByClassName('rules-button-open')[0].style.display = "block";
+            document.getElementsByClassName('rules-button-close')[0].style.display = "none";
+        }
     </script>
 
 </head>
@@ -93,6 +115,19 @@
             </div>
          </div>
 
+         <div class="rules">
+            <button class="rules-button-open" onclick="showRules()">Показать правила игры</button>
+            <button class="rules-button-close" onclick="closeRules()">Скрыть правила игры</button>
+            <div class="rules2">
+                <ol style=" list-style-type: upper-roman;">
+                    <li>Нажмите на кнопку "сыграть в игру"</li>
+                    <li>Введите число от 1 до 100</li>
+                    <li>Нажмите на кнопку "угадать"</li>
+                    <li>Угадывайте число по подсказкам</li>
+                    <li>После того как вы угадали число посмотрите количество попыток и нажмите на кнопку "Сыграть еще раз"</li>
+                </ol>
+            </div>
+        </div>
     </main>
 
     <footer>
