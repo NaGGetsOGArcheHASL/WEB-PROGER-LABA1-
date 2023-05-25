@@ -6,6 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
     <title>Нагайцев Максим Алексеевич, Дементьев Артур Русланович. Лабораторная работа 7</title>
+    <script>
+        function addBlocks() {
+            let blocks = document.getElementById ('blocks');
+            for(let i = 0; i < 10; i++) {
+                let block = document.createElement('div');
+                block.innerHTML = 'Блок №' + (i+1) + ': ' + (2 * i**2);
+
+                blocks.appendChild(block);
+            }
+        }
+
+        function showExchange() {
+            let exchange = [73.6307, 72.7923, 72.8949, 71.5763, 70.8924,
+                            70.5991, 70.3847, 70.0414, 70.1217, 70.5174];
+            let table = document.getElementById('dollar-exchange');
+            for (let i = 0; i < exchange.length; i++) {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.innerHTML = exchange[i];
+                tr.appendChild(td);
+                table.appendChild(tr);
+            }
+
+            let sum = 0;
+            for(let i = 0; i < exchange.length; i++) {
+                sum = sum + exchange[i];
+            }
+            let average = sum / exchange.length;
+            document.getElementById('detail').innerHTML = 'Среднее значение: ' + average;
+        }
+
+
+    </script>
 </head>
 <body>
     <header>
@@ -13,7 +46,12 @@
     </header>
 
     <main>
+        <button onclick="addBlocks()">Создать блоки</button>
+        <div id="blocks"></div>
 
+        <button onclick="showExchange()">Курс доллара</button>
+        <table border="1" id="dollar-exchange"></table>
+        <div id="detail"></div>
     </main>
 
     <footer>
