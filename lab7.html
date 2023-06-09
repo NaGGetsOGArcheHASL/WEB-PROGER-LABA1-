@@ -91,6 +91,35 @@
             }
             mult2.appendChild
         }
+        function stocks() {
+            let days = [["15.05.2023"], ["16.05.2023"], ["17.05.2023"], ["18.05.2023"], ["19.05.2023"], ["22.05.2023"], ["23.05.2023"], ["24.05.2023"], ["26.05.2023"], ["26.05.2023"]];
+            let exchange = [7271.00, 7278.00, 7331.00, 7315.00, 7275.00, 7369.00, 7537.00, 7588.00, 7455.00, 7543.00];
+            let razn = ['-', 7271.00 - 7278.00, 7278.00 - 7331.00, 7331.00 - 7315.00, 7315.00 - 7275.00, 7275.00 - 7369.00, 7369.00 - 7537.00, 7537.00 - 7588.00, 7588.00 - 7455.00, 7455.00 - 7543.00]
+            
+            let table = document.getElementById('stocks-today');
+            for(let i = 0; i < exchange.length; i++) {
+                let tr = document.createElement('tr');
+                let td1 = document.createElement('td');
+                td1.innerHTML = days[i]
+                let td2 = document.createElement('td');
+                td2.innerHTML = exchange[i]
+                let td3 = document.createElement('td');
+                td3.innerHTML = razn[i]
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+                table.appendChild(tr);
+            }
+            let sum = 0
+            for(let i = 0; i < exchange.length; i++) {
+                sum = sum + exchange[i];
+            }
+            let average = sum / exchange.length;
+            let min = Math.min.apply(Math, exchange)
+            let max = Math.max.apply(Math, exchange)
+
+            document.getElementById('medi').innerHTML = 'Среднее значения: ' + average + '<br />' + 'Минимальное значение: ' + min + '<br />' + 'Максимальное значения: ' + max
+        }
     </script>
 </head>
 <body>
@@ -119,6 +148,9 @@
         <button onclick="multiplications2()">Таблица умнажения на 105</button>
         <div id="mult2"></div>
 
+        <button onclick="stocks()">Курс акций "ФСК - Россети"</button>
+        <table border="1" id="stocks-today"></table>
+        <div id="medi"></div>
 
     </main>
 
