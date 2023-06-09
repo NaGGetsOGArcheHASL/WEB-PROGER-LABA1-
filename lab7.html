@@ -46,6 +46,35 @@
                 Transparentblocks.appendChild(Trablock);
             }
         }
+        function addcircle() {
+            let count = 0;
+            let circleinput = document.getElementById('circleinput');
+            let button = document.getElementById('Button');
+            let container = document.getElementById('circleContainer');
+            let circleCount = parseInt(circleinput.value);
+            for(let i = 0; i < circleCount; i++) {
+                let circle = document.createElement('div');
+                circle.style
+                if (count == 0) {
+                    circle.style.backgroundColor = 'red';
+                    count = 1
+                }
+                else {
+                    circle.style.backgroundColor = 'green';
+                    count = 0
+                }
+            circle.style.paddingTop = "32px";
+            circle.style.paddingBottom = "32px";
+            circle.style.paddingLeft = "36px";
+            circle.style.paddingRight = "36px";
+            circle.style.display = 'inline-block';
+            circle.style.borderRadius ='200px';
+            circle.innerText = circleCount -i;
+            circle.style.marginRight = '12px';
+            container.appendChild(circle);
+            } 
+            
+        }
     </script>
 </head>
 <body>
@@ -63,7 +92,10 @@
 
         <button onclick="addTransparentBlock()">Создать полупрозрачные блоки</button>
         <div id="transparent-blocks"></div>
-
+        
+        <input value="5" id="circleinput"><br>
+        <button onclick="addcircle()">Красное\зелёное</button>
+        <div id="circleContainer"></div> 
     </main>
 
     <footer>
