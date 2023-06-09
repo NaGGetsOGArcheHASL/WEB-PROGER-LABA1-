@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Нагайцев Максим Алексеевич, Дементьев Артур Русланович. Лабораторная работа 7</title>
+    <script>
+        function addBlocks() {
+            let blocks = document.getElementById ('blocks');
+            for(let i = 0; i < 10; i++) {
+                let block = document.createElement('div');
+                block.innerHTML = 'Блок №' + (i+1) + ': ' + (2 * i**2);
+
+                blocks.appendChild(block);
+            }
+        }
+
+        function showExchange() {
+            let exchange = [73.6307, 72.7923, 72.8949, 71.5763, 70.8924,
+                            70.5991, 70.3847, 70.0414, 70.1217, 70.5174];
+            let table = document.getElementById('dollar-exchange');
+            for (let i = 0; i < exchange.length; i++) {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.innerHTML = exchange[i];
+                tr.appendChild(td);
+                table.appendChild(tr);
+            }
+
+            let sum = 0;
+            for(let i = 0; i < exchange.length; i++) {
+                sum = sum + exchange[i];
+            }
+            let average = sum / exchange.length;
+            document.getElementById('detail').innerHTML = 'Среднее значение: ' + average;
+        }
+
+        function addTransparentBlock() {
+            let Transparentblocks = document.getElementById('transparent-blocks');
+            for(let x = 0; x < 11; x++) {
+                let Trablock = document.createElement('div');
+                Trablock.innerHTML = 'Блок ' + (x*10) + '%';
+                Trablock.style.opacity = 0 + (x*10) + '%';
+                Transparentblocks.appendChild(Trablock);
+            }
+        }
+        function addcircle() {
+            let count = 0;
+            let circleinput = document.getElementById('circleinput');
+            let button = document.getElementById('Button');
+            let container = document.getElementById('circleContainer');
+            let circleCount = parseInt(circleinput.value);
+            for(let i = 0; i < circleCount; i++) {
+                let circle = document.createElement('div');
+                circle.style
+                if (count == 0) {
+                    circle.style.backgroundColor = 'red';
+                    count = 1
+                }
+                else {
+                    circle.style.backgroundColor = 'green';
+                    count = 0
+                }
+            circle.style.paddingTop = "32px";
+            circle.style.paddingBottom = "32px";
+            circle.style.paddingLeft = "36px";
+            circle.style.paddingRight = "36px";
+            circle.style.display = 'inline-block';
+            circle.style.borderRadius ='200px';
+            circle.innerText = circleCount -i;
+            circle.style.marginRight = '12px';
+            container.appendChild(circle);
+            }    
+        }
+        function multiplications1() {
+            let mult2 = document.getElementById('mult2');
+            for(let i = 13; i < 34; i++) {
+                let multi2 = document.createElement('div');
+                multi2.innerHTML = i + ' * ' + 51 + ' = ' + (i*51)
+                mult2.appendChild(multi2);
+            }
+        }
+        function multiplications2() {
+            let mult2 = document.getElementById('mult2');
+            for(let i = 13; i < 34; i++) {
+                let multi2 = document.createElement('div');
+                multi2.innerHTML = i + ' * ' + 105 + ' = ' + (i*105)
+                mult2.appendChild(multi2);
+            }
+            mult2.appendChild
+        }
+        function stocks() {
+            let days = [["15.05.2023"], ["16.05.2023"], ["17.05.2023"], ["18.05.2023"], ["19.05.2023"], ["22.05.2023"], ["23.05.2023"], ["24.05.2023"], ["26.05.2023"], ["26.05.2023"]];
+            let exchange = [7271.00, 7278.00, 7331.00, 7315.00, 7275.00, 7369.00, 7537.00, 7588.00, 7455.00, 7543.00];
+            let razn = ['-', 7271.00 - 7278.00, 7278.00 - 7331.00, 7331.00 - 7315.00, 7315.00 - 7275.00, 7275.00 - 7369.00, 7369.00 - 7537.00, 7537.00 - 7588.00, 7588.00 - 7455.00, 7455.00 - 7543.00]
+            
+            let table = document.getElementById('stocks-today');
+            for(let i = 0; i < exchange.length; i++) {
+                let tr = document.createElement('tr');
+                let td1 = document.createElement('td');
+                td1.innerHTML = days[i]
+                let td2 = document.createElement('td');
+                td2.innerHTML = exchange[i]
+                let td3 = document.createElement('td');
+                td3.innerHTML = razn[i]
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+                table.appendChild(tr);
+            }
+            let sum = 0
+            for(let i = 0; i < exchange.length; i++) {
+                sum = sum + exchange[i];
+            }
+            let average = sum / exchange.length;
+            let min = Math.min.apply(Math, exchange)
+            let max = Math.max.apply(Math, exchange)
+
+            document.getElementById('medi').innerHTML = 'Среднее значения: ' + average + '<br />' + 'Минимальное значение: ' + min + '<br />' + 'Максимальное значения: ' + max
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <button onclick="addBlocks()">Создать блоки</button>
+        <div id="blocks"></div>
+
+        <button onclick="showExchange()">Курс доллара</button>
+        <table border="1" id="dollar-exchange"></table>
+        <div id="detail"></div>
+
+        <button onclick="addTransparentBlock()">Создать полупрозрачные блоки</button>
+        <div id="transparent-blocks"></div>
+        
+        <input value="5" id="circleinput"><br>
+        <button onclick="addcircle()">Красное\зелёное</button>
+        <div id="circleContainer"></div> 
+
+        <button onclick="multiplications1()">Таблица умножения на 51</button>
+        <div id="mult1"></div>
+
+        <button onclick="multiplications2()">Таблица умнажения на 105</button>
+        <div id="mult2"></div>
+
+        <button onclick="stocks()">Курс акций "ФСК - Россети"</button>
+        <table border="1" id="stocks-today"></table>
+        <div id="medi"></div>
+
+    </main>
+
+    <footer>
+        &copy; Нагайцев Максим, Дементьев Артур, 2 курс, 2023
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нагайцев Максим Алексеевич, Дементьев Артур Русланович. Лабораторная работа 6</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        .game {
+            border: 1px solid red;
+            border-radius: 120px;
+            width: 345px;
+            margin: 10px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .rules2 {
+            display: auto;
+            background-color: orange;
+            color: black;
+            width: 400px;
+            border: 1px solid red;
+            border-radius: 15px;
+            line-height: 20px;
+        }
+        .rules-button-close {
+            display: none;
+        }
+        .color {
+            background-color: yellow;
+            width: 200px;
+            height: auto;
+            color: black;
+            border: 3px solid blue;
+            margin-top: 20px;
+            padding: 5px;
+        }
+        #moving-block {
+            position: absolute;
+            left: 0;
+            transform: translateX(0%);
+            transition: all 2s ease-out;
+            background-color: green;
+            width: 150px;
+            height: 150px;
+            margin-top: 30px;
+            text-align: center;
+            line-height: 150px;
+            cursor: pointer;
+            border: 2px solid red;
+            border-radius: 10%;
+        }
+        #block2 {
+            width: 100px;
+            cursor: pointer;
+            background-color: blue;
+            margin-top: 200px;
+            text-align: center;
+            border: 3px solid black;
+            border-radius: 10px;
+        }
+        #wear {
+            width: 500px;
+            height: auto;
+        }
+    </style>
+
+    <script>
+        let number;
+        let count = 0;
+        function startGame() {
+            number = Math.floor(Math.random() * 100) + 1;
+            let screens = document.getElementsByClassName('game');
+            screens[0].style.display = 'none';
+            screens[1].style.display = 'block';
+        }
+        function guess() {
+            count ++;
+            let input = document.getElementById('user-number');
+            let userNumber = parseInt(input.value);
+            let message = document.getElementById('result');
+            if(userNumber > number) {
+                message.innerHTML = 'Вы ввели слишком большое число';
+            }
+            else if(userNumber < number) {
+                message.innerHTML = 'Вы ввели слишком маленькое число';
+            }
+            else {
+                let screens = document.getElementsByClassName('game');
+                screens[1].style.display = 'none';
+                screens[2].style.display = 'block';
+                displayNumber = document.getElementById('number').innerHTML = number;
+                displayNumber = document.getElementById('try-count').innerHTML = count;
+            }
+            function again(params) {
+            StartGame()
+            let screens = document.getElementsByClassName('game');
+            screens[2].style.display = 'none';
+            screens[1].style.display = 'block';
+            count = 0;
+            let clearinput = document.getElementById ('user-number');
+            clearinput.value = 0;
+            document.getElementById ('result').innerHTML = '';
+            }
+        }
+        function showRules() {
+            document.getElementsByClassName('rules')[0].style.display = "block";
+            document.getElementsByClassName('rules-button-open')[0].style.display = "none";
+            document.getElementsByClassName('rules-button-close')[0].style.display = "block";
+        }
+        function closeRules() {
+            document.getElementsByClassName('rules')[0].style.display = "none";
+            document.getElementsByClassName('rules-button-open')[0].style.display = "block";
+            document.getElementsByClassName('rules-button-close')[0].style.display = "none";
+        }
+        function changeColor(div) {
+            if (div.style.backgroundColor == 'yellow') {
+            div.style.backgroundColor = 'red';
+            div.style.color = 'white';
+            document.getElementById('color-name').innerHTML = 'красный';
+            }
+            else if (div.style.backgroundColor == 'red') {
+                div.style.backgroundColor = 'black';
+                div.style.color = 'yellow';
+                document.getElementById('color-name').innerHTML = 'черный';
+            }
+            else if (div.style.backgroundColor == 'black') {
+                div.style.backgroundColor = 'green';
+                div.style.color = 'orange';
+                document.getElementById('color-name').innerHTML = 'зеленый';
+            }
+            else if (div.style.backgroundColor == 'green') {
+                div.style.backgroundColor = 'blue';
+                div.style.color = 'red';
+                document.getElementById('color-name').innerHTML = 'синий';
+            }
+            else {
+                div.style.backgroundColor = 'yellow';
+                div.style.color = 'blue';
+                document.getElementById('color-name').innerHTML = 'желтый';
+            }
+        }
+        function moveBlock() {
+            let block = document.getElementById("moving-block");
+            if (block.style.left == "0px") {
+            block.style.transform = "rotate(4turn)";
+            block.style.left = "calc(100% - 153px)";
+            
+            } else {
+            block.style.left = "0";
+            block.style.transform = "rotate(0)";
+            }
+        }
+        function Width() {
+            const block = document.getElementById("block2");
+            const currentWidth = parseInt(block.style.width);
+            const newWidth = currentWidth + 50;
+            if (newWidth <= 1000) {
+            block.style.width = newWidth + "px";
+            } 
+            else {
+            block.style.width = "100px";
+            }
+        }
+        function filter() {
+            let color = document.getElementById('wear-color').value;
+            let type = document.getElementById('wear-type').value;
+            let wear = document.getElementById('wear');
+            if (color == 'Красный' && type == 'Футболка') {
+                wear.src = 'redf.jpg'
+            }
+            else if (color == 'Белый' && type == 'Футболка') {
+                wear.src = 'whitef.jpg'
+            }
+            else if (color == 'Черный' && type == 'Футболка') {
+                wear.src = 'blackf.jpg'
+            }
+            else if (color == 'Красный' && type == 'Поло') {
+                wear.src = 'redp.jpg'
+            }
+            else if (color == 'Белый' && type == 'Поло') {
+                wear.src = 'whitep.jpg'
+            }
+            else if (color == 'Черный' && type == 'Поло') {
+                wear.src = 'blackp.jpg'
+            }
+            else if (color == 'Красный' && type == 'Майка') {
+                wear.src = 'redm.jpg'
+            }
+            else if (color == 'Белый' && type == 'Майка') {
+                wear.src = 'whitem.jpg'
+            }
+            else if (color == 'Черный' && type == 'Майка') {
+                wear.src = 'blackm.jpg'
+            }
+            else {
+                alert("Вы не выбрали")
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+
+    <main>
+        <div class="game">
+            <button onclick="startGame()">
+                Сыграть в игру
+            </button>
+        </div>
+
+        <div class="game" style="display: none;">
+            <h1>Угадай число!</h1>
+            <div>
+                Задумано число от 1 до 100. Угадайте, какое?<br>
+                <input type="number" value="" min="1" max="100" id="user-number"><br>
+                <button onclick="guess()">Угадать</button>
+                <div id="result"></div>
+            </div>
+        </div>
+
+        <div class="game" style="display: none;">
+            <h1>Поздравляем, вы выйграли!</h1>
+            <div>
+                Задуманное число: <span id="number"></span>
+            </div>
+            <div>
+                Количество попыток: <span id="try-count"></span>
+            </div>
+            <div>
+                <button onclick="again()">Сыграть еще раз</button>
+            </div>
+         </div>
+
+         <div class="rules">
+            <button class="rules-button-open" onclick="showRules()">Показать правила игры</button>
+            <button class="rules-button-close" onclick="closeRules()">Скрыть правила игры</button>
+            <div class="rules2">
+                <ol style=" list-style-type: upper-roman;">
+                    <li>Нажмите на кнопку "сыграть в игру"</li>
+                    <li>Введите число от 1 до 100</li>
+                    <li>Нажмите на кнопку "угадать"</li>
+                    <li>Угадывайте число по подсказкам</li>
+                    <li>После того как вы угадали число посмотрите количество попыток и нажмите на кнопку "Сыграть еще раз"</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="color" ondblclick="changeColor(this)">
+            Цвет: <span id="color-name">желтый</span><br>
+            Сделайте двойной щелчок, чтобы сменить.
+        </div>
+        
+        <div id="moving-block" onclick="moveBlock()">Щелкни меня</div>
+
+        <div id="block2" onclick="Width()">Расширить</div>
+
+        <div style="margin-top: 50px;">
+            Цвет одежды:
+            <select id="wear-color">
+                <option>Красный</option>
+                <option>Белый</option>
+                <option>Черный</option>
+            </select>
+            
+            Тип одежды:
+            <select id="wear-type">
+            <option>Футболка</option>
+            <option>Поло</option>
+            <option>Майка</option>
+            </select>
+        </div>
+
+        <div><button onclick="filter()">OK</button></div>
+                
+        <div><img id="wear" style="background-color: black;"></div>
+            
+        </div>
+    </main>
+
+    <footer>
+        &copy; Нагайцев Максим, Дементьев Артур, 2 курс, 2023
+    </footer>
+</body>
+</html>
