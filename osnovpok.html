@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        .text {
+            top: 100px;
+            margin-left: 25%;
+            margin-right: 25%;
+        }
+        .table {
+        border: 1 solid;
+        border-radius: 15px;
+        margin: 30px;
+        margin-left: 50px;
+        width: 600px;
+        height: 30%;
+        display: inline-flexbox;
+        }
+
+        .rub:after {
+            content: ' \20BD';
+        }
+        .text {
+            margin: 50px;
+            color: black;
+            text-align: center;
+        }
+        .block {
+            display: flexbox;
+            padding: 10px;
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 50px;
+            border: 1px solid;
+            border-radius: 15px;
+            border-color: rgb(65, 175, 98);
+            background-color: rgb(126, 196, 141);
+            margin-top: 0px;
+            box-shadow: 0 0 5px 2px rgb(170, 168, 168);
+            position: static;
+            height: 100px;
+            width: 400px;
+            justify-content: center;
+            
+        }
+        .content {
+            margin-left: 20px;
+            color: black;
+            background-color: white;
+            text-decoration: none;
+            position: relative;
+            top: -30px;
+            
+        }
+        
+        ul.nav{
+            margin-left: 0px;
+            padding-left: 0px;
+            list-style: none;
+        }
+        ul.nav a {
+            display: block;
+            width: 7em;
+            padding:10px;
+            background-color: #f4f4f4;
+            border-top: 1px dashed #333;
+            border-right: 1px dashed #333;
+            border-left: 5px solid #333;
+            text-decoration: none;
+            color: #333;
+        }
+        ul.nav li:last-child a {
+            border-bottom: 1px dashed #333;
+        }
+        .info {
+        background-color: #ffffff;
+        padding: 10px 25px;
+        }
+
+        .info__switch {
+        display: none;
+        }
+
+        .info__body {
+        max-height: 0;
+        overflow: hidden;
+        transition: 0.4s;
+        }
+
+        .info__switch:checked~.info__body {
+        max-height: 800px;
+        }
+
+        .info__headline::before {
+        content: "";
+        position: absolute;
+        left: -18px;
+        top: 4px;
+        border: 6px solid #39739d;
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+        }
+    </style>
+    <script>
+        function pokazateli() {
+            let exchange = [612, 609.5, 619, 634.5, 622.5, 614, 604.5, 608.5, 606.5, 604.5, 610, 609.5, 607, 607, 606.5, 605, 604, 604, 602.5, 599]
+            
+            let sum = 0
+            for(let i = 0; i < exchange.length; i++) {
+                sum = sum + exchange[i];
+            }
+            let average = sum / exchange.length;
+            let standdev = Math.sqrt(average)
+            let min = Math.min.apply(Math, exchange)
+            let max = Math.max.apply(Math, exchange)
+
+            document.getElementById('stad').innerHTML = standdev;
+            document.getElementById('max').innerHTML = max;
+            document.getElementById('min').innerHTML = min;
+        }
+    
+    </script>
+</head>
+<body onload="pokazateli()">
+    <header>
+            <div img src="lg.PNG" height="60px"></div>
+        <div>
+            <ul class="nav">
+                <li><a href="infaboutcom.html">Главная</a></li>
+                <li><a href="osnovpok.html">Основные финансовые показатели</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+                <li><a href="video.html">Видео</a></li>
+            </ul>
+        </div>
+        <div style="position: fixed; top: 10px; right: 20px;">
+            НГТУ, ФБИ-12, РГЗ, Дементьев Артур
+        </div>
+    </header>
+    <div class="text" style="font-size: 28px;">
+        <b>Основные финансовые показатели.</b>
+    </div>
+    <div class="text">
+        <div>
+            На странице вы можете ознакомится с основными финансовыми показателями компании <b>ПАО "<i>«INARCTICA»</i>"</b>.
+        </div>
+        <a href="https://fapvdo.ru/7816430057/"></a>
+        </div>
+    <div class="block">
+        <b style="font-size: 20px;">Капитализация</b>
+            <div class="rub" style="padding: 20px; font-size: 24px;">
+                <b>51 890 000 000</b> 
+            </div>
+    </div>  
+    <div class="block" style="font-size: 20px;">
+        <b>Общее число акций</b>
+            <div style="padding: 20px; font-size: 24px;">
+                <b>87 874 683 <span style="color: rgb(55, 163, 82); font-size: 20px;">шт</span></b>
+            </div>
+    </div>
+    <div class="info" style="margin-left: 440px; margin-right: 20%;">
+        <input id="info__body_8" class="info__switch" type="checkbox">
+        <label for="info__body_8" class="info__headline" style="font-size: 24px; border-bottom: dotted #245c32;text-decoration: none;">Таблица - "Динамика изменения цены акции на апрель 2023г."</label>
+        <div class="info__body">
+            <table class="table",border="1 solid" >
+                <tr>
+                    <th>Дата</th>
+                    <th>Цена</th>
+                </tr>
+                <tr><td>03.04.2023</td><td>612</td></tr>
+                <tr><td>04.04.2023</td><td>609.5</td></tr>
+                <tr><td>05.04.2023</td><td>619</td></tr>
+                <tr><td>06.04.2023</td><td>634.5</td></tr>
+                <tr><td>07.04.2023</td><td>622.5</td></tr>
+                <tr><td>10.04.2023</td><td>614</td></tr>
+                <tr><td>11.04.2023</td><td>604.5</td></tr>
+                <tr><td>12.04.2023</td><td>608.5</td></tr>
+                <tr><td>13.04.2023</td><td>606.5</td></tr>
+                <tr><td>14.04.2023</td><td>604.5</td></tr>
+                <tr><td>17.04.2023</td><td>610</td></tr>
+                <tr><td>18.04.2023</td><td>609.5</td></tr>
+                <tr><td>19.04.2023</td><td>607</td></tr>
+                <tr><td>20.04.2023</td><td>607</td></tr>
+                <tr><td>21.04.2023</td><td>606.5</td></tr>
+                <tr><td>24.04.2023</td><td>605</td></tr>
+                <tr><td>25.04.2023</td><td>604</td></tr>
+                <tr><td>26.04.2023</td><td>604</td></tr>
+                <tr><td>27.04.2023</td><td>602.5</td></tr>
+                <tr><td>28.04.2023</td><td>599</td></tr>
+            </table>     
+
+        </div>
+      </div>
+            
+    <div class="text" style="font-size: 24px;">
+        <b>Расчётные значения на основе цен закрытия торгов:</b>
+    </div>
+            
+    <div class="block">
+        <b style="font-size: 20px;">Минимальное значение:</b>
+            <div id="min" class="rub" style="padding: 20px; font-size: 24px;">
+                
+            </div>
+    </div>
+
+    <div class="block">
+        <b style="font-size: 20px;">Максимальное значение:</b>
+            <div id="max" class="rub" style="padding: 20px; font-size: 24px;">
+                
+            </div>
+    </div>
+
+    <div class="block">
+        <b style="font-size: 20px;">Среднеквадратическое отклонение:</b>
+            <div id="stad" style="padding: 20px; font-size: 24px;">
+            </div>
+    </div>
+    <footer>
+        <div>&copy; Дементьев Артур, ФБИ-12, 2 курс, 2023</div>
+    </footer>
+    
+</body>
+</html>
