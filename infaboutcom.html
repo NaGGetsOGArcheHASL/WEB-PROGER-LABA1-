@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        .text {
+            top: 100px;
+            margin-left: 25%;
+            margin-right: 25%;
+        }
+        .rule {
+            border: 1px none;
+            border-radius: 15px;
+            margin-left: 20px;
+        }
+        ul.nav{
+            margin-left: 0px;
+            padding-left: 0px;
+            list-style: none;
+        }
+        ul.nav a {
+            display: block;
+            width: 7em;
+            padding:10px;
+            background-color: #f4f4f4;
+            border-top: 1px dashed #333;
+            border-right: 1px dashed #333;
+            border-left: 5px solid #333;
+            text-decoration: none;
+            color: #333;
+        }
+        ul.nav li:last-child a {
+            border-bottom: 1px dashed #333;
+            zoom: 1;
+        }
+    </style>
+    <script>
+        function ruleon() {
+            let screens = document.getElementsByClassName('rule')
+            screens[0].style.display = 'none';
+            screens[1].style.display = 'block';
+        }
+
+        function ruleof() {
+            let screens = document.getElementsByClassName('rule')
+            screens[1].style.display = 'none';
+            screens[0].style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="rule" style="position: relative; text-align: left; top: 10px; right: -20px; cursor: pointer;" >
+            <div onclick="ruleon()"><img src="logo.PNG" height="60px"></div>
+        </div>
+        <div class="rule" style="position: relative; text-align: left; top: 10px; right: -20px; display: none; cursor: pointer;" >
+            <div onclick="ruleof()"><img src="logo.PNG" height="60px top5px"></div> 
+            <ul class="nav">
+                <li><a href="Vlados_glav.html">Главная</a></li>
+                <li><a href="osnov_fin.html">Основные финансовые показатели</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+                <li><a href="Vidosik.html">Видео</a></li>
+            </ul>
+        </div>
+        <div style="position: fixed; top: 10px; right: 20px;">
+            НГТУ, ФБ-12, РГЗ, Козицкий Владислав
+        </div>
+    </header>
+
+    <div class="text">
+        <h1><p class="text_soll"><b>О ПАО «НЕФАЗ»</b></p></h1>
+        <p class="text_soll" style="top: -250px;">
+            Это автомобилестроительная компания, входящая в группу 
+            предприятий «КАМАЗ» и являющаяся крупнейшим российским 
+            производителем спецнадстроек на шасси автомобиля КАМАЗ. 
+            В декабре 2000 года заводом был представлен первый автобус 
+            городского типа «НЕФАЗ-5299». Расположен завод в городе Нефтекамск.
+        </p>
+        <p class="text_soll" style="margin-left: 300px; top: -100px;">
+            <img src="НефАЗ2.jpg">
+        </p>
+        <h1><p><b>История «НЕФАЗ»</b></p></h1>
+
+        <p>
+            17 декабря 1970 года Совет министров СССР издал постановление «О строительстве и реконструкции заводов Министерства автомобильной промышленности для обеспечения Камского автомобильного завода запасными частями и комплектующими деталями». В те годы шло строительство КАМАЗа, и было решено строить и заводы-спутники, которые бы поставляли туда необходимую комплектацию.
+        </p>
+        <p>
+            <img src="zavod.jpg" height="400", weight="45%" style="margin-left: 20%; margin-right: 30%;">
+        </p>
+        <p>
+            25 декабря 1970 года Государственный комитет Совета министров по делам строительства издал приказ № 65 «О создании завода по производству автосамосвалов и лебёдок» в городе Нефтекамске Башкирской АССР. Подобный же приказ № 4 от 8 января 1971 года издал Министр автомобильной промышленности СССР.
+        </p>
+        <p>
+            13 июля 1972 года началось строительство завода.
+        </p>
+        <p>
+            15 апреля 1977 собран первый десятитонный автосамосвал «КАМАЗ-5511».
+            <img src="КАМАЗ-5511.jpg" height="200", weight="45%" style="margin-left: 30%; margin-right: 30%;">
+        </p>
+        <p>
+            11 октября 1977 года состоялся пуск главного конвейера. Начался серийный выпуск автосамосвалов «КАМАЗ-5511».
+        </p>
+        <p>
+            31 октября 1977 года был утверждён акт Государственной комиссии о приёмке в эксплуатацию первой очереди Нефтекамского завода по производству автосамосвалов.
+        </p>
+        <p>
+            В 1981 году сдана в эксплуатацию первая очередь производства вахтовых автобусов. Мощность производства — 3000 вахтовых автобусов в год.
+        </p>
+        <p>
+            19 мая 1982 года выпущен 100-тысячный самосвал «КАМАЗ-5511».
+        </p>
+        <p>
+            В 1993 году завод стал Открытым акционерным обществом «Нефтекамский автозавод».
+        </p>
+        <p>
+            В 1993 году завод стал Открытым акционерным обществом «Нефтекамский автозавод».
+        </p>
+        <p>
+            В 1993 году завод стал Открытым акционерным обществом «Нефтекамский автозавод».
+        </p>
+        <p>
+            В середине 2006 года заводом заинтересовался голландско-бельгийский концерн VDL, и с начала января 2007 года они совместно с НЕФАЗом начали производство новых пассажирских автобусов.
+            <img src="avtobus.jpg" height="200", weight="45%" style="margin-left: 35%; margin-right: 30%;">
+        </p>
+        <p>
+            В конце 2012 года совместное предприятие КАМАЗа и бразильской Marcopolo S.A. «КАМАЗ-Марко», 
+            расположенное на территории завода НЕФАЗ приступило к сборке автобусов малого класса Bravis. 
+            Автобус разработан на шасси «КАМАЗа» и имеет 25 мест.
+            <img src="brivas.jpg" height="200", weight="45%" style="margin-left: 35%; margin-right: 30%;">
+        </p>
+        <p>
+            28 августа 2012 года сертифицирован электрический автобус (электробус) НЕФАЗ-52992. Автономный электрический ход рассчитан более чем на 200 км.
+            <img src="НЕФАЗ-52992.jpg" height="200", weight="45%" style="margin-left: 35%; margin-right: 30%;">
+        </p>
+        <p>
+            В 2016 году Открытое акционерное общество «НЕФАЗ» переименовано в Публичное акционерное общество «НЕФАЗ».
+        </p>
+        <p>
+            В августе 2018 года выпущен электробус КамАЗ-6282, совместная разработка НЕФАЗа и КАМАЗа.
+            <img src="КамАЗ-6282.jpeg" height="200", weight="45%" style="margin-left: 35%; margin-right: 30%;">
+        </p>
+        <p>
+            в 2020—2021 году выпущен сочленённый автобус КАМАЗ-6299-40-52.
+            <img src="КАМАЗ-6299-40-52.jpg" height="200", weight="45%" style="margin-left: 35%; margin-right: 30%;">
+        </p>
+    </div>
+
+    <footer>
+        <div>&copy; Козицкий Владислав, ФБИ-12, 2 курс, 2023</div>
+    </footer>
+    
+</body>
+</html>
+
+
+
+
+
+
