@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        .map-responsive{
+            overflow:hidden;
+            padding-bottom:56.25%;
+            position:relative;
+            height:0;
+        }
+        .map-responsive iframe{
+            left:20%;
+            top:20%;
+            height:60%;
+            width:60%;
+            position:absolute;
+        }
+        .info {
+        background-color: #eff318;
+        padding: 10px 25px;
+        }
+
+        .info__switch {
+        display: none;
+        }
+
+        .info__body {
+        max-height: 0;
+        overflow: hidden;
+        transition: 0.4s;
+        }
+
+        .info__switch:checked~.info__body {
+        max-height: 800px;
+        }
+
+        .info__headline::before {
+        content: "";
+        position: absolute;
+        left: -18px;
+        top: 4px;
+        border: 6px solid #39739d;
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+        }
+        .text {
+            top: 100px;
+            margin-left: 25%;
+            margin-right: 25%;
+        }
+        .rule {
+            border: 1px none;
+            border-radius: 15px;
+            margin-left: 20px;
+        }
+        ul.nav{
+            margin-left: 0px;
+            padding-left: 0px;
+            list-style: none;
+        }
+        ul.nav a {
+            display: block;
+            width: 7em;
+            padding:10px;
+            background-color: #f4f4f4;
+            border-top: 1px dashed #333;
+            border-right: 1px dashed #333;
+            border-left: 5px solid #333;
+            text-decoration: none;
+            color: #333;
+        }
+        ul.nav li:last-child a {
+            border-bottom: 1px dashed #333;
+        }
+    </style>
+    <script>
+        function ruleon() {
+            let screens = document.getElementsByClassName('rule')
+            screens[0].style.display = 'none';
+            screens[1].style.display = 'block';
+        }
+
+        function ruleof() {
+            let screens = document.getElementsByClassName('rule')
+            screens[1].style.display = 'none';
+            screens[0].style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="rule" style="position: relative; text-align: left; top: 10px; right: -20px; cursor: pointer;" >
+            <div onclick="ruleon()"><img src="lg.PNG" height="60px"></div>
+        </div>
+        <div class="rule" style="position: relative; text-align: left; top: 10px; right: -20px; display: none; cursor: pointer;" >
+            <div onclick="ruleof()"><img src="lg.PNG" height="60px"></div> 
+            <ul class="nav">
+                <li><a href="infaboutcom.html">Главная</a></li>
+                <li><a href="osnovpok.html">Основные финансовые показатели</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+                <li><a href="video.html">Видео</a></li>
+            </ul>
+        </div>
+        <div style="position: fixed; top: 10px; right: 20px;">
+            НГТУ, ФБИ-12, РГЗ, Дементьев Артур
+        </div>
+    </header>
+
+    <div class="text" style="top: 30px; font-size: 40px; font-family: sans-serif;">
+        Контактные данные
+    </div>
+    <div class="info" style="margin-left: 440px; margin-right: 20%; margin-top: 50px;">
+        <input id="info__body_1" class="info__switch" type="checkbox">
+        <label for="info__body_1" class="info__headline" style="font-size: 24px; border-bottom: dotted #000;text-decoration: none;"><b>ОТДЕЛ СБЫТА</b></label>
+        <div class="info__body">
+            <div>
+                <b>Юридический адрес</b>
+            </div>
+            <div>
+                184371 Мурманская область, Кольский район, село Ура-Губа, ул. Рыбацкая, д. 45/2
+            </div>
+            <div>
+                <b>Офис в Москве</b>
+            </div>
+            <div>
+                Адрес: 121353, г. Москва, ул. Беловежская, д. 4
+                Тел: +7 (495) 258-99-28
+                E-mail:info@inarctica.com
+            </div>
+            <div>
+                <b>Офис в Мурманске</b>
+            </div>
+            <div>
+                Адрес: 183038 г. Мурманск, ул. Ленина, д. 73
+                Тел: + 7 (8152) 45-17-30
+                E-mail:aqua@inarctica.com
+            </div>
+            <div>
+                <b>Контакты для СМИ</b>
+            </div>
+            <div>
+                ПАО «ИНАРКТИКА»
+                Тел: +7 (495) 258-99-28
+                E-mail:pr@inarctica.com
+            </div>
+              
+        </div>
+      </div>
+    <div class="map-responsive" style="border: 1 solid;">
+        <iframe src="https://inarctica.com/company/business-geo/"></iframe>
+    </div>
+    <footer>
+        <div>&copy; Дементьев Артур, ФБИ-12, 2 курс, 2023</div>
+    </footer>
+    
+</body>
+</html>
