@@ -72,8 +72,24 @@
             circle.innerText = circleCount -i;
             circle.style.marginRight = '12px';
             container.appendChild(circle);
-            } 
-            
+            }    
+        }
+        function multiplications1() {
+            let mult2 = document.getElementById('mult2');
+            for(let i = 13; i < 34; i++) {
+                let multi2 = document.createElement('div');
+                multi2.innerHTML = i + ' * ' + 51 + ' = ' + (i*51)
+                mult2.appendChild(multi2);
+            }
+        }
+        function multiplications2() {
+            let mult2 = document.getElementById('mult2');
+            for(let i = 13; i < 34; i++) {
+                let multi2 = document.createElement('div');
+                multi2.innerHTML = i + ' * ' + 105 + ' = ' + (i*105)
+                mult2.appendChild(multi2);
+            }
+            mult2.appendChild
         }
     </script>
 </head>
@@ -96,6 +112,14 @@
         <input value="5" id="circleinput"><br>
         <button onclick="addcircle()">Красное\зелёное</button>
         <div id="circleContainer"></div> 
+
+        <button onclick="multiplications1()">Таблица умножения на 51</button>
+        <div id="mult1"></div>
+
+        <button onclick="multiplications2()">Таблица умнажения на 105</button>
+        <div id="mult2"></div>
+
+
     </main>
 
     <footer>
