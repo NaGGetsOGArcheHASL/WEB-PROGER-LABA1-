@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        .text_video {
+            margin: 50px;
+            font-size: 30px;
+        }
+        .video {
+            position: relative;
+            height: 800px;
+            margin: 10% 0 10%;
+            margin-left: 12%;
+            top: -200px;
+        }
+        .content {
+            margin-left: 20px;
+            color: black;
+            background-color: white;
+            text-decoration: none;
+            position: relative;
+            top: -30px;
+            
+        }
+        .text {
+            top: 100px;
+            margin-left: 25%;
+            margin-right: 25%;
+        }
+        .rule {
+            border: 1px none;
+            border-radius: 15px;
+            margin-left: 20px;
+        }
+        ul.nav{
+            margin-left: 0px;
+            padding-left: 0px;
+            list-style: none;
+        }
+        ul.nav a {
+            display: block;
+            width: 7em;
+            padding:10px;
+            background-color: #f4f4f4;
+            border-top: 1px dashed #333;
+            border-right: 1px dashed #333;
+            border-left: 5px solid #333;
+            text-decoration: none;
+            color: #333;
+        }
+        ul.nav li:last-child a {
+            border-bottom: 1px dashed #333;
+        }
+    </style>
+    <script>
+        function ruleon() {
+            let screens = document.getElementsByClassName('rule')
+            screens[0].style.display = 'none';
+            screens[1].style.display = 'block';
+        }
+
+        function ruleof() {
+            let screens = document.getElementsByClassName('rule')
+            screens[1].style.display = 'none';
+            screens[0].style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="rule" style="position: relative; text-align: left; top: 10px; right: -20px; cursor: pointer;" >
+            <div onclick="ruleon()"><img src="lg.PNG" height="60px"></div>
+        </div>
+        <div class="rule" style="position: relative; text-align: left; top: 10px; right: -20px; display: none; cursor: pointer;" >
+            <div onclick="ruleof()"><img src="lg.PNG" height="60px top5px"></div> 
+            <ul class="nav">
+                <li><a href="infaboutcom.html">Главная</a></li>
+                <li><a href="osnovpok.html">Основные финансовые показатели</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+                <li><a href="video.html">Видео</a></li>
+            </ul>
+        </div>
+        <div style="position: fixed; top: 10px; right: 20px;">
+            НГТУ, ФБB-12, РГЗ, Дементьев Артур
+        </div>
+    </header>
+
+    <div class="text_video">
+        <b>INARCTICA - лидер рынка аквакультурного лосося в России</b>
+    </div>
+    <iframe width="auto"  height="auto" src="https://youtu.be/xUJU7mU3l6U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </video>
+
+    <footer>
+        <div>&copy; Дементьев Артур, ФБИ-12, 2 курс, 2023</div>
+    </footer>
+    
+</body>
+</html>
