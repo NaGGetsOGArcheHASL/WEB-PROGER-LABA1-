@@ -6,8 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Нагайцев Максим Алексеевич, Дементьев Артур Русланович. Лабораторная работа 8</title>
     <link rel="stylesheet" href="main.css">
+    <script src="lab8.js"></script>
 </head>
-<body>
-    
+<body onload="ShowDate()">
+    <header>
+        НГТУ, ФБ, Лабораторная работа 8
+    </header>
+
+    <main>
+        <div id="current-date"></div>
+
+        <div>
+            <label>Дата рождения: <input type="date"></label>
+        </div>
+
+        <div>
+            <button onclick="ShowDaysCount()">Показать число дней</button>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Нагайцев Максим, Дементьев Артур, 2 курс, 2023
+    </footer>
+
 </body>
 </html>
