@@ -17,3 +17,21 @@ function ShowDate() {
     out.appendChild(d);
     out.appendChild(e);
 }
+function ShowDaysCount() {
+    let today = new Date();
+    let inputDate = document.querySelector('input[type=date]');
+    let birthday = new Date (inputDate.value);
+    let daysCount = (today - birthday)/1000 /60 /60 /24;
+    daysCount = Math.floor(daysCount);
+    div.innerHTML='Дней прошло: ' + daysCount;
+    div.className='birthdayout';
+    div.id = 'childdiv';
+    out.appendChild(div);
+}
+
+function clearbirthday() {
+    let out = document.getElementById('birthdayout');
+    let input = document.querySelector('input[type-date]');
+    input.value='';
+    out.removeChild(document.getElementById('childdiv'));
+}
